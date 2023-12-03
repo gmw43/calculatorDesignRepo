@@ -1,0 +1,130 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    max-height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(120deg, rgb(144, 227, 238), rgb(255, 231, 224), rgb(233, 94, 94)); */
+}
+
+/*---------------- container css ---------------- */
+
+.container {
+    /* backdrop-filter:blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px); */
+    border-radius: 20px;
+    /* box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15), 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    color: hsl(202, 11%, 29%); */
+    max-width: fit-content; 
+    padding: 5px;
+    margin: 1rem;
+    background-color: #250b41;
+}
+
+/*---------------- all three section css ---------------- */
+section{
+    margin: 1rem;
+}
+
+/*---------------- top section css ---------------- */
+.topSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #EDDA59;
+    margin-bottom: 0;
+}
+
+.topSection div:nth-child(1){
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.topSection div:nth-child(2){
+    line-height: 2.5;
+}
+
+/*---------------- display section css ---------------- */
+
+.displayRow{
+    background-color: #331B4D;
+    color: #EDDA59;
+    padding: 10px 20px;
+    margin-top: 0 !important;
+    border-radius: 10px;
+
+}
+
+input{
+    text-align: right;
+    background-color: unset;
+    border: unset;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    height: 40px;
+    width: 100%;
+}
+
+/*---------------- button section css ---------------- */
+
+.buttonSection{
+    background-color: #D4CDCD;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.buttonRow{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    padding: 20px;
+    margin: 5px;
+    border: unset;
+    border-radius: 10px;
+    background-color: #331B4D;
+    color: #EDDA59;
+    box-shadow: 4px 4px 4px 0px rgba(111, 17, 158, 0.5);
+    font-weight: bold;
+    font-size: large;
+    cursor: pointer;
+    /* max-width: 60px; */
+}
+
+
+/*----------------  css on operatr buttons for adjust width ---------------- */
+
+.dotbtn, .minusbtn, .dividebtn,  .multiplybtn{
+    width: 50px;
+}
+
+.delbtn{
+    padding: 7px;
+    color: white;
+    background-color: rgb(86, 8, 125) ;
+}
+.resetbtn{
+    color: white;
+    background-color: #56077D;
+    width:124px;
+}
+.assignmentbtn{
+    background-color: #00DECE;
+    width: 124px;
+}
+
+/*---------------- media qurey css ---------------- */
+@media (max-width: 768px) {
+    .container {
+        width: 80% !important; 
+    }
+}
+
+
+
