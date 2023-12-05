@@ -10,54 +10,78 @@
 </head>
 
 <body>
-
+<div class="main-container">
     <div class="container">
-        <section class="topSection" >
+        <section class="topSection">
             <div> calc</div>
-            <div>THEME</div>
+            <div class="ToggleDiv">
+                <p>THEME</p>
+                <!-- Toggle container with three stages -->
+                <div class="ToggleStages">
+                   <div>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </div>
+
+
+                    <div class="switch-toggle switch-3 switch-candy">
+                        <input id="on" name="state-d" type="radio" checked="" />
+                        <label for="on" class="ToggleLabel" onclick=""></label>
+
+                        <input id="na" name="state-d" type="radio" checked="checked" />
+                        <label for="na" class="ToggleLabel" class="center" onclick="switchFunc()" ></label>
+
+                        <input id="off" name="state-d" type="radio" />
+                        <label for="off" class="ToggleLabel" onclick=""></label>
+
+                    </div>
+                </div>
+            </div>
+
         </section>
-        <section >
+        <section>
             <div class="displayRow">
-                <input type="text" value="0">
+                <input type="text" readonly>
             </div>
         </section>
 
         <section class="buttonSection">
-            <div class="buttonRow">
-                <button class="btn">7</button>
-                <button class="btn">8</button>
-                <button class="btn">9</button>
-                <button class="btn delbtn">DEL</button>
+            <div class="divRow">
+                <div class="btn">7</div>
+                <div class="btn">8</div>
+                <div class="btn">9</div>
+                <div class="btn delbtn">DEL</div>
             </div>
-            <div class="buttonRow">
-                <button class="btn">4</button>
-                <button class="btn">5</button>
-                <button class="btn">6</button>
-                <button class="btn">&plus;</button>
+            <div class="divRow">
+                <div class="btn">4</div>
+                <div class="btn">5</div>
+                <div class="btn">6</div>
+                <div class="btn">&plus;</div>
             </div>
-            <div class="buttonRow">
-                <button class="btn">1</button>
-                <button class="btn">2</button>
-                <button class="btn">3</button>
-                <button class="btn minusbtn">-</button>
+            <div class="divRow">
+                <div class="btn">1</div>
+                <div class="btn">2</div>
+                <div class="btn">3</div>
+                <div class="btn minusbtn">-</div>
             </div>
-            <div class="buttonRow">
-                <button class="btn dotbtn">.</button>
-                <button class="btn">0</button>
-                <button class="btn dividebtn">/</button>
-                <button class="btn multiplybtn">*</button>
+            <div class="divRow">
+                <div class="btn dotbtn">.</div>
+                <div class="btn">0</div>
+                <div class="btn dividebtn">/</div>
+                <div class="btn multiplybtn">*</div>
             </div>
 
-            <div class="buttonRow">
-                <button class="btn resetbtn">RESET</button>
-                <button class="btn assignmentbtn">&equals;</button>
+            <div class="divRow">
+                <div class="btn resetbtn">RESET</div>
+                <div class="btn assignmentbtn">&equals;</div>
 
             </div>
-            
+
         </section>
 
     </div>
-
+</div>
 </body>
 <script src="cal.js"></script>
 
