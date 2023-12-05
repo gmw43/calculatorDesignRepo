@@ -11,7 +11,7 @@ body {
     display: grid;
     justify-content: center;
     align-items: center;
-    background-color: #250b41;
+    background-color:  #200833;
 }
 
 /*---------------- container css ---------------- */
@@ -118,8 +118,8 @@ section {
 /*---------------- display section css ---------------- */
 
 .displayRow {
-    background-color: #331B4D;
-
+    background-color:  #250b41;
+    height: 60px;
     padding: 10px 20px;
     margin-top: 0 !important;
     border-radius: 5px;
@@ -133,7 +133,7 @@ section {
     color: #EDDA59;
     font-weight: bolder;
     font-size: 1.8rem;
-    height: 40px;
+    height: 60px;
     width: 100%;
 }
 
@@ -144,7 +144,7 @@ section {
 /*---------------- btn section css ---------------- */
 
 .buttonSection {
-    background-color: #D4CDCD;
+    background-color: #250b41;
     padding: 10px;
     border-radius: 5px;
 }
@@ -156,26 +156,16 @@ section {
 
 .btn {
     flex: 1;
-    margin: 3px;
+    margin: 8px;
     padding: 10px;
     text-align: center;
     color: #EDDA59;
     background-color: #331B4D;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight:900;
     cursor: pointer;
     border-radius: 5px;
-
-    /* padding: 20px;
-    margin: 5px;
-    border: unset;
-    
-   
-    color: #EDDA59;
-    box-shadow: 4px 4px 4px 0px rgba(111, 17, 158, 0.5);
-    
-    font-size: large;
-    
-    /* max-width: 60px; */
+    border-bottom: 3px solid #56077D;
 }
 
 
@@ -189,45 +179,56 @@ section {
     /* padding: 7px; */
     color: white;
     background-color: rgb(86, 8, 125);
+    border-color: #863aaf;
+    
 }
 
 
 .resetbtn {
     color: white;
     background-color: #56077D;
+    border-color: #863aaf;
     /* width:124px; */
 }
 
 .assignmentbtn {
     background-color: #31aaa2;
+    border-color: #31aaa2 ;
     /* width: 124px; */
 }
 
 /*---------------- toggle css ---------------- */
 
+.bodyToggle{
+    background-color: #3B4664 !important;
+}
+
 .deltogglebtn,
 .resettogglebtn {
     background-color: #65739B !important;
     color: white !important;
+    border-color: #3B4664 !important;
 }
 
 .assignmenttogglebtn {
     background-color: #c45623 !important;
     color: white !important;
+    border-color: #c45623 !important;
 }
 
 .btntoggle {
-    background-color: white;
-    color: #252E44;
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.767) ;
+    color: #252E44 ;
+    border-color: #9b9365 ;
+    /* box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5); */
 }
 
-.containerToggle {
+/* .containerToggle {
     background-color: #3B4664 !important;
-}
+} */
 
-.btnSectionToogle {
-    background-color: #252E44 !important;
+.buttonSectionToogle {
+    background-color: #1F2D43 !important;
 }
 
 .topSectionToggle {
@@ -236,7 +237,7 @@ section {
 }
 
 .displayRowToggle {
-    background-color: #191F32 !important;
+    background-color: #1F2D43 !important;
     color: white !important;
 }
 
