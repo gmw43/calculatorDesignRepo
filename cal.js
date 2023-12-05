@@ -8,6 +8,7 @@ const topSection = document.querySelector(".topSection")
 const container = document.querySelector(".container")
 const buttonSection = document.querySelector(".buttonSection")
 const displayRow = document.querySelector(".displayRow")
+const bodyClr = document.querySelector("body")
 
 
 const allbtn = document.querySelectorAll(".btn")
@@ -21,6 +22,7 @@ const btn = document.querySelector("lable")
     container.classList.toggle("containerToggle")
     buttonSection.classList.toggle("buttonSectionToogle")
     displayRow.classList.toggle("displayRowToggle")
+    bodyClr.classList.toggle("bodyToggle")
 
     for(let x of allbtn){
         x.classList.toggle("btntoggle")
