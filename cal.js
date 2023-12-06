@@ -1,7 +1,8 @@
-let string = "";
-let display = document.querySelector('.displayRow input'); // Updated selector
-let buttons = document.querySelectorAll(".btn");
-let click = document.getElementById("click");
+let string = " ";
+let display = document.getElementsByClassName('.displayRow input')
+let buttons = document.querySelectorAll(".btn")
+
+let click = document.getElementById("click")
 
 click.addEventListener('click', ()=>{
     // console.log(click);
@@ -10,24 +11,24 @@ click.addEventListener('click', ()=>{
 
 
 Array.from(buttons).forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    if (e.target.innerHTML == '=') {
-      string = eval(string);
-      display.value = string;
-    } else if (e.target.innerHTML == 'RESET') {
-      string = "";
-      display.value = string;
-    } else if (e.target.innerHTML == 'DEL') {
-      string = string.slice(0, -1);
-      display.value = string;
-    } else {
-      string = string + e.target.innerHTML;
-      display.value = string;
-      console.log(string);
-    }
-  });
+    
+    btn.addEventListener('click', (e) => {
+        if (e.target.innerHTML == '=') {
+            string = eval(string);
+            document.querySelector('.displayRow input').value = string;
+        } else if (e.target.innerHTML == 'RESET') {
+            string = " ";
+            document.querySelector('.displayRow input').value = string;
+        } else if (e.target.innerHTML == 'DEL') {
+            string = string.slice(0, -1);
+            document.querySelector('.displayRow input').value = string;
+        } else {
+            string = string + e.target.innerHTML;
+            document.querySelector('.displayRow input').value = string;
+            console.log(string)
+        }
+    });
 });
-
 
 // const delbtn = document.querySelector(".delbtn")
 // const resetbtn = document.querySelector(".resetbtn")
