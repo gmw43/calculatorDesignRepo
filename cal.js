@@ -1,54 +1,48 @@
-let string = " ";
-let display = document.getElementsByClassName('input')
-let buttons = document.querySelectorAll(".btn");
-const delbtn = document.querySelector(".delbtn")
-const resetbtn = document.querySelector(".resetbtn")
-const assignmentbtn = document.querySelector(".assignmentbtn")
-const topSection = document.querySelector(".topSection")
-const container = document.querySelector(".container")
-const buttonSection = document.querySelector(".buttonSection")
-const displayRow = document.querySelector(".displayRow")
-const bodyClr = document.querySelector("body")
+let result = document.getElementById("input-text");
 
-
-const allbtn = document.querySelectorAll(".btn")
-const btn = document.querySelector("lable")
-
- function switchFunc () {
-    delbtn.classList.toggle("deltogglebtn")
-    resetbtn.classList.toggle("deltogglebtn")
-    assignmentbtn.classList.toggle("assignmenttogglebtn")
-    topSection.classList.toggle("topSectionToggle")
-    container.classList.toggle("containerToggle")
-    buttonSection.classList.toggle("buttonSectionToogle")
-    displayRow.classList.toggle("displayRowToggle")
-    bodyClr.classList.toggle("bodyToggle")
-
-    for(let x of allbtn){
-        x.classList.toggle("btntoggle")
+let Calculate = (number) => {
+    // Check for consecutive operators before appending
+    if (/\d[+\-*/]{2,}/.test(result.value)) {
+        alert("Syntax Error: Consecutive operators not allowed");
+    } else {
+        result.value += number;
     }
-  }
+}
 
-Array.from(buttons).forEach((btn) => {
-    
-    btn.addEventListener('click', (e) => {
-        if (e.target.innerHTML == '=') {
-            string = eval(string);
-            document.querySelector('input').value = string;
-        } else if (e.target.innerHTML == 'RESET') {
-            string = " ";
-            document.querySelector('input').value = string;
-        } else if (e.target.innerHTML == 'DEL') {
-            string = string.slice(0, -1);
-            document.querySelector('input').value = string;
-        } else {
-            string = string + e.target.innerHTML;
-            document.querySelector('input').value = string;
-            console.log(string)
+let Result = () => {
+    try {
+        // Check for consecutive operators in the entire expression
+        if (/(\+|\-|\*|\/){2,}/.test(result.value)) {
+            throw new Error("Syntax Error: Consecutive operators not allowed");
         }
-    });
-});
 
-// function toggleStage() {
-//     const btn = document.querySelector('.toggle-btn');
-//     btn.classList.toggle('active');}
+        result.value = eval(result.value);
+    } catch (err) {
+        alert(err.message);
+    }
+}
+
+function cls() {
+    result.value = " ";
+}
+
+function del() {
+    result.value = result.value.slice(0, -1);
+}
+
+/**************************** */
+let click = document.getElementById("click")
+
+click.addEventListener('click', () => {
+    // console.log(click);
+    document.body.classList.toggle("secondCss");
+})
+
+
+
+
+
+
+
+
+

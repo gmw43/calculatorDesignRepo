@@ -11,7 +11,34 @@ body {
     display: grid;
     justify-content: center;
     align-items: center;
-    background-color:  #200833;
+    background-color: var(--bodyBGClr) ;
+}
+
+:root{
+    --bodyBGClr:#200833;
+     --primary-color-cal: #EDDA59;
+     --btnSectionBGColor: #250b41;
+     --btnBGColor:#331B4D;
+     --btnBorderColor:#56077D;
+     --delbtnBGColor:#31aaa2;
+     --togglebtn:#c45623;
+     --assignbtn:#31aaa2;
+     --delResetbtnBG:#56077D;
+     --delResetBorderClr:#863aaf;
+     --toggleBGClr:#250b41;
+     
+}
+
+.secondCss{
+    --bodyBGClr:white;
+     --primary-color-cal: black;
+     --btnSectionBGColor:#c2bebe;
+     --btnBGColor:white;
+     --btnBorderColor:#A99D91;
+     --assignbtn:#c45623;
+     --delResetbtnBG:#008187;
+     --delResetBorderClr:#006066;
+     --toggleBGClr:#c2bebe;
 }
 
 /*---------------- container css ---------------- */
@@ -39,7 +66,7 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: #EDDA59;
+    color: var( --primary-color-cal);
     margin-bottom: 1rem;
 }
 
@@ -48,10 +75,6 @@ section {
     font-size: 1.5rem;
 }
 
-/* .topSection div:nth-child(2) {
-    font-size: 10px;
-    line-height: 1;
-} */
 
 .ToggleDiv {
     display: flex;
@@ -73,52 +96,87 @@ section {
 .ToggleStages li {
     list-style: none;
     float: left;
-    margin: 6px 7px;
+    margin: 6px 10px;
     font-size: 10px;
 }
 
-/* Style for the toggle */
-.toggle-container {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
 
 /* Style for the individual stages */
-.switch-toggle {
-    width: 60px;
+/* .switch-toggle {
+    width: 100px;
     height: 18px;
     float: left;
     background: #331B4D;
     border-radius: 20px;
-}
+} */
 
-.switch-toggle input {
-    position: absolute;
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 18px;
+  }
+  
+  .switch input { 
     opacity: 0;
-}
-
-.switch-toggle input + label {
-    padding: 7px;
-    float: left;
-    color: #fff;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
     cursor: pointer;
-}
-
-.switch-toggle input:checked + label {
-    background: #c45623;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:var(--toggleBGClr);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    top: 1.5px;
+    left: 4px;
+    bottom: 4px;
+   background:var(--togglebtn);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--toggleBGClr);
+  }
+  
+  /* input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  } */
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
     border-radius: 50%;
-    margin: 2px 9px;
-    cursor: pointer;
-}
+  }
 
   
 
 /*---------------- display section css ---------------- */
 
 .displayRow {
-    background-color:  #250b41;
+    background-color:  var(--btnSectionBGColor);
     height: 60px;
     padding: 10px 20px;
     margin-top: 0 !important;
@@ -130,7 +188,7 @@ section {
     text-align: right;
     background-color: unset;
     border: unset;
-    color: #EDDA59;
+    color: var( --primary-color-cal);
     font-weight: bolder;
     font-size: 1.8rem;
     height: 60px;
@@ -144,7 +202,7 @@ section {
 /*---------------- btn section css ---------------- */
 
 .buttonSection {
-    background-color: #250b41;
+    background-color: var(--btnSectionBGColor);
     padding: 10px;
     border-radius: 5px;
 }
@@ -159,13 +217,13 @@ section {
     margin: 8px;
     padding: 10px;
     text-align: center;
-    color: #EDDA59;
-    background-color: #331B4D;
+    color: var( --primary-color-cal);
+    background-color: var(--btnBGColor);
     font-size: 1.5rem;
     font-weight:900;
     cursor: pointer;
     border-radius: 5px;
-    border-bottom: 3px solid #56077D;
+    border-bottom: 3px solid var(--btnBorderColor);
 }
 
 
@@ -175,26 +233,18 @@ section {
     width: 50px;
 } */
 
-.delbtn {
+.delbtn, .resetbtn {
     /* padding: 7px; */
     color: white;
-    background-color: rgb(86, 8, 125);
-    border-color: #863aaf;
+    background-color: var(--delResetbtnBG);
+    border-color: var(--delResetBorderClr);
     
 }
 
-
-.resetbtn {
-    color: white;
-    background-color: #56077D;
-    border-color: #863aaf;
-    /* width:124px; */
-}
-
 .assignmentbtn {
-    background-color: #31aaa2;
-    border-color: #31aaa2 ;
-    /* width: 124px; */
+    color: white;
+    background-color: var(--assignbtn);
+    border-color: var(--assignbtn) ;
 }
 
 /*---------------- toggle css ---------------- */
@@ -263,3 +313,4 @@ section {
 
     }
 }
+
