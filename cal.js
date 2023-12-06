@@ -1,48 +1,58 @@
-let result = document.getElementById("input-text");
+let string = "";
+let display = document.querySelector('.displayRow input'); // Updated selector
+let buttons = document.querySelectorAll(".btn");
+let click = document.getElementById("click");
 
-let Calculate = (number) => {
-    // Check for consecutive operators before appending
-    if (/\d[+\-*/]{2,}/.test(result.value)) {
-        alert("Syntax Error: Consecutive operators not allowed");
-    } else {
-        result.value += number;
-    }
-}
-
-let Result = () => {
-    try {
-        // Check for consecutive operators in the entire expression
-        if (/(\+|\-|\*|\/){2,}/.test(result.value)) {
-            throw new Error("Syntax Error: Consecutive operators not allowed");
-        }
-
-        result.value = eval(result.value);
-    } catch (err) {
-        alert(err.message);
-    }
-}
-
-function cls() {
-    result.value = " ";
-}
-
-function del() {
-    result.value = result.value.slice(0, -1);
-}
-
-/**************************** */
-let click = document.getElementById("click")
-
-click.addEventListener('click', () => {
+click.addEventListener('click', ()=>{
     // console.log(click);
     document.body.classList.toggle("secondCss");
 })
 
 
+Array.from(buttons).forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    if (e.target.innerHTML == '=') {
+      string = eval(string);
+      display.value = string;
+    } else if (e.target.innerHTML == 'RESET') {
+      string = "";
+      display.value = string;
+    } else if (e.target.innerHTML == 'DEL') {
+      string = string.slice(0, -1);
+      display.value = string;
+    } else {
+      string = string + e.target.innerHTML;
+      display.value = string;
+      console.log(string);
+    }
+  });
+});
 
 
+// const delbtn = document.querySelector(".delbtn")
+// const resetbtn = document.querySelector(".resetbtn")
+// const assignmentbtn = document.querySelector(".assignmentbtn")
+// const topSection = document.querySelector(".topSection")
+// const container = document.querySelector(".container")
+// const buttonSection = document.querySelector(".buttonSection")
+// const displayRow = document.querySelector(".displayRow")
+// const bodyClr = document.querySelector("body")
 
 
+// const allbtn = document.querySelectorAll(".btn")
+// const btn = document.querySelector("lable")
 
+//  function switchFunc () {
+//     delbtn.classList.toggle("deltogglebtn")
+//     resetbtn.classList.toggle("deltogglebtn")
+//     assignmentbtn.classList.toggle("assignmenttogglebtn")
+//     topSection.classList.toggle("topSectionToggle")
+//     container.classList.toggle("containerToggle")
+//     buttonSection.classList.toggle("buttonSectionToogle")
+//     displayRow.classList.toggle("displayRowToggle")
+//     bodyClr.classList.toggle("bodyToggle")
 
-
+//     for(let x of allbtn){
+//         x.classList.toggle("btntoggle")
+//     }
+//   }
